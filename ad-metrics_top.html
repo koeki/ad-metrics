@@ -1,0 +1,1201 @@
+<html>
+
+<head>
+	<title> Ad-Metrics Nexttuesday </title>
+
+	<style type="text/css">
+
+
+	hr {margin:1em 0;
+	font-size:12px;
+	background-color: C0BDB3;
+	border:1px solid wight;
+	padding:2px;
+	line-height:3px;
+	color:#444;
+	overflow:auto;
+	-webkit-border-radius:3px;
+	}
+	
+	body {
+		font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	padding: 0.7em;
+	}
+
+	@media screen and (min-width: 914px) {
+
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+
+    table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+
+table td {border-bottom:0px solid #ddd;padding:.2em 1em; }
+
+</style>
+
+
+	
+
+
+
+
+<script type="text/javascript">
+
+var choot = "" , cn ="", ii = "", sz = "", ev ="" , mve ="", mhe ="", dfp = "", uum ="", cl ="" , ca ="", pl = "", cr ="", tp ="", ts ="";
+
+
+
+function chooseTag() {
+	choot = document.tagp.example.value;
+
+if (choot == "generic" ){ genericfkt(); }
+	else if (choot == "roverMediaplex") { roverMediaplexfkt();}
+		else if (choot == "mediaMind") { mediaMindfkt();}
+
+
+	
+}
+
+function genericfkt() {
+	document.tagp.iivalue.value = "ii value"; 
+	document.tagp.cnvalue.value = "cn value"; 
+	document.tagp.szvalueh.value = "sz value height"; 
+	document.tagp.szvaluew.value = "sz value width"; 
+	document.tagp.clvalue.value = "cl value"; 
+	document.tagp.plvalue.value = "pl value"; 
+	document.tagp.crvalue.value = "cr value";
+
+akktualisieren();
+}
+
+function roverMediaplexfkt() {
+	document.tagp.iivalue.value = "it's not needed"; 
+	document.tagp.cnvalue.value = "it's not needed";
+	document.tagp.szvalueh.value = "it's not needed";
+	document.tagp.szvaluew.value = "it's not needed";
+	document.tagp.plvalue.value = "it's not needed";
+	document.tagp.crvalue.value = "it's not needed";
+	document.tagp.clvalue.value = "cl value"; 
+
+	akktualisieren();
+}
+
+function mediaMindfkt() {
+	document.tagp.iivalue.value = "it's not needed"; 
+	document.tagp.cnvalue.value = "it's not needed"; 
+	document.tagp.szvalueh.value = "it's not needed"; 
+	document.tagp.szvaluew.value = "it's not needed"; 
+	document.tagp.clvalue.value = "it's not needed"; 
+	document.tagp.plvalue.value = "it's not needed"; 
+	document.tagp.crvalue.value = "it's not needed"; 
+	
+	akktualisieren();
+}
+
+
+function akktualisieren() {
+
+	if (document.tagp.usecn.checked ){
+		if (document.tagp.cndefault.checked ) {
+			cn = "&cn=0" ;
+		}
+		else {
+			if (document.tagp.cnvalue.value != "cn value" && document.tagp.cnvalue.value != "") {
+				cn = "&cn=" + document.tagp.cnvalue.value;	
+			}
+			else {
+				cn = "";
+			}
+		}
+
+	} else {
+		cn = "";
+	}
+
+
+
+	if (document.tagp.useii.checked ){
+		if (document.tagp.iivalue.value!= "ii value" && document.tagp.iivalue.value != "") {
+				ii = "&ii=" + document.tagp.iivalue.value;	
+			}
+			else {
+				ii = "";
+			}
+		}
+		else {
+			ii = "" ;
+		}
+
+
+	
+
+
+
+	if (document.tagp.usesz.checked  ){
+		if (document.tagp.szdefault.checked ) {
+			sz = "&sz=0x0" ;
+		}
+		else {
+			if (document.tagp.szvalueh.value != "sz value height" && document.tagp.szvalueh.value != "" && document.tagp.szvaluew.value != "sz value width" && document.tagp.szvaluew.value != "") {
+				sz = "&sz=" + document.tagp.szvaluew.value + "x" + document.tagp.szvalueh.value;	
+			}
+			else {
+				sz = "";
+			}
+		}
+
+	}else {
+		sz = "";
+	}
+
+
+if (document.tagp.useev.checked  ){
+		if (document.tagp.evdefault.checked ) {
+			ev = "&ev=lfvc" ;
+		}
+		else {
+			if (document.tagp.evvalue.value != "ev value" && document.tagp.evvalue.value != "") {
+				ev = "&ev=" + document.tagp.evvalue.value;	
+			}
+			else {
+				ev = "";
+			}
+		}
+
+	}else {
+		ev = "";
+	}
+
+
+if (document.tagp.usemve.checked  ){
+		if (document.tagp.mvedefault.checked ) {
+			mve = "&mve=unlimited" ;
+		}
+		else {
+			if (document.tagp.mvevalue.value != "mve value" && document.tagp.mvevalue.value != "") {
+				mve = "&mve=" + document.tagp.mvevalue.value;	
+			}
+			else {
+				mve = "";
+			}
+		}
+
+	} else {
+		mve = "";
+	}
+
+
+	if (document.tagp.usemhe.checked  ){
+		if (document.tagp.mhedefault.checked  ) {
+			mhe = "&mhe=unlimited" ;
+		}
+		else {
+			if (document.tagp.mhevalue.value != "mhe value" && document.tagp.mhevalue.value != "") {
+				mhe = "&mhe=" + document.tagp.mhevalue.value;	
+			}
+			else {
+				mhe = "";
+			}
+		}
+
+	}else {
+		mhe = "";
+	}
+
+
+	if (document.tagp.usedfp.checked   ){
+		if (document.tagp.dfpdefault.checked  ) {
+			dfp = "&dfp=1" ;
+		}
+		else {
+			if (document.tagp.dfpvalue.value != "dfp value" && document.tagp.dfpvalue.value != "") {
+				dfp = "&dfp=" + document.tagp.dfpvalue.value;	
+			}
+			else {
+				dfp = "";
+			}
+		}
+
+	}else {
+		dfp = "";
+	}
+
+	if (document.tagp.useuum.checked  ){
+		if (document.tagp.uumdefault.checked  ) {
+			uum = "&uum=0" ;
+		}
+		else {
+			if (document.tagp.uumvalue.value != "uum value" && document.tagp.uumvalue.value != "") {
+				uum = "&uum=" + document.tagp.uumvalue.value;	
+			}
+			else {
+				uum = "";
+			}
+		}
+
+	}else {
+		uum = "";
+	}
+
+
+	if (document.tagp.usecl.checked  ){
+		if (document.tagp.cldefault.checked ) {
+			cl = "&cl=_" ;
+		}
+		else {
+			if (document.tagp.clvalue.value != "cl value" && document.tagp.clvalue.value != "") {
+				cl = "&cl=" + document.tagp.clvalue.value;	
+			}
+			else {
+				cl = "";
+			}
+		}
+
+	}else {
+		cl = "";
+	}
+
+
+	if (document.tagp.useca.checked ){
+		if (document.tagp.cadefault.checked  ) {
+			ca = "&ca=_" ;
+		}
+		else {
+			if (document.tagp.cavalue.value != "ca value" && document.tagp.cavalue.value != "") {
+				ca = "&ca=" + document.tagp.cavalue.value;	
+			}
+			else {
+				ca = "";
+			}
+		}
+
+	}else {
+		ca = "";
+	}
+
+
+	if (document.tagp.usepl.checked ){
+		if (document.tagp.pldefault.checked  ) {
+			pl = "&pl=_" ;
+		}
+		else {
+			if (document.tagp.plvalue.value != "pl value" && document.tagp.plvalue.value != "") {
+				pl = "&pl=" + document.tagp.plvalue.value;	
+			}
+			else {
+				pl = "";
+			}
+		}
+
+	}else {
+		pl = "";
+	}
+
+
+	if (document.tagp.usecr.checked){
+		if (document.tagp.crdefault.checked ) {
+			cr = "&cr=_" ;
+		}
+		else {
+			if (document.tagp.crvalue.value != "cr value" && document.tagp.crvalue.value != "") {
+				cr = "&cr=" + document.tagp.crvalue.value;	
+			}
+			else {
+				cr = "";
+			}
+		}
+
+	}else {
+		cr = "";
+	}
+
+
+	if (document.tagp.usetp.checked){
+		if (document.tagp.tpdefault.checked) {
+			tp = "&tp=_" ;
+		}
+		else {
+			if (document.tagp.tpvalue.value != "tp value" && document.tagp.tpvalue.value != "") {
+				tp = "&tp=" + document.tagp.tpvalue.value;	
+			}
+			else {
+				tp = "";
+			}
+		}
+
+	}else {
+		tp = "";
+	}
+
+	
+	if (document.tagp.usets.checked){
+		if (document.tagp.tsdefault.checked) {
+			ts = "&ts=_" ;
+		}
+		else {
+			if (document.tagp.tsvalue.value != "ts value" && document.tagp.tsvalue.value != "") {
+				ts = "&ts=" + document.tagp.tsvalue.value;	
+			}
+			else {
+				ts = "";
+			}
+		}
+
+	}else {
+		ts = "";
+	}
+
+ausgabe() ;
+
+
+
+}
+
+
+
+
+function ausgabe() {
+
+	if (document.tagp.example.value == "generic") {
+		var strg1 = document.getElementById("genericString1");
+		var strg2 = document.getElementById("genericString2");
+		var strg3 = document.getElementById("genericString3");
+		document.tagp.tagausgabe.value = ( " \<script async type=\"text/javascript\"src=\"http://metrics.nt.vc/metrics.js?\"" + ii + cn + sz + ev + mve + mhe + dfp + uum + cl + ca + pl + cr + tp + ts + 	"\">\</scr" + "ipt><noscript>\<img src=\"http://metrics.nt.vc/metrics.gif? + strg3.innerText;>\</noscript>");
+
+		
+	}
+
+
+	else if (document.tagp.example.value == "roverMediaplex") {
+		var strrm1 = document.getElementById("roverMediaplexString1");
+		var strrm2 = document.getElementById("roverMediaplexString2");
+		document.tagp.tagausgabe.value = 
+("var am_host = (window.isSecure ? \" https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"),		  am_src = am_host + \"/metrics.js?ii=\" + window.rvr_id + \"&cn=foldcheck\" + window.rvr_id + \"&sz=\" + window.mpcrw + \"x\" + window.mpcrh +  \"&cl=\" + window.siteID + \"&ee=\" + window.ntee + \"&es=\" + window.ntes + \"&ed=\" + window.nted + \"&ep=\" + window.ntep + \"&est=\" + window.ntest + \"&ec=\" + window.ntec + \"&pl=\" + window.M1 + \"&cr=\" + window.M2 + \"&hu=\" + window.hu \""+ ev + mve + mhe + dfp + uum + ca + tp + ts +  "," + "am_sc" + "ript = \'\<scr' + \'ipt type=\"text/javascript\" src=\"\' + am_src + \'\"></scr\' + 'ipt>';window.dfpCallback = function(dfp) {// this function is called by am_script once the fingerprint is readyvar uuid_src = am_host + \"/uuid/\" + dfp + \"?jsonp=uuidCallback\",  uuid_script = '<scr' + \'ipt type=\"text/javascript\" src=\"\' + uuid_src + \'\"></scr\' + \'ipt>\';  if (window.DocumentWrite) { DocumentWrite(uuid_script); } else { document.write(uuid_script);}};window.uuidCallback = function(uuid) { // parse integer for targeting purposes  var n = parseInt(uuid.slice(0, 12), 16);};if (window.DocumentWrite) { DocumentWrite(am_script);} else {  document.write(am_script);};")
+
+	}
+
+
+
+
+
+	else if (document.tagp.example.value == "mediaMind") {
+		var strmm1 = document.getElementById("mediaMindString1");
+		var strmm2 = document.getElementById("mediaMindString2");
+
+		document.tagp.tagausgabe.value =
+
+
+"\<scr" + "ipt type=\"text/jav" + "ascript\">(function(){var e = document.getElementsByTagName(\"scr" + "ipt\")[0];var d = document.createElement(\"script\");var am_host = ((location.protocol === 'https:') ? \"https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"), am_src = am_host + \"/metrics.js?ii=\" + 67 + \"\" + (+new Date()) + \"&cn=1\" + \"&sz=[%tp_AdFormat%]\" + \"&hu=\" + window.hu + \"&cl=707&pl=707186007513190&cr=15516023"+ ev + mve + mhe + dfp + uum + ca + tp + ts + "\";d.src = am_src;d.type = \"text/ja" + "vascript\"; e.parentNode.insertBefore(d,e);})();</sc" + "ript>";
+
+
+
+	}
+
+
+
+
+
+
+
+	else { alert("first choose a tag type");
+		
+			}
+}
+
+function cnclear() {
+	if (document.tagp.cnvalue.value == "cn value") {
+		document.tagp.cnvalue.value = "";
+	}
+}
+
+
+
+function iiclear() {
+	if (document.tagp.iivalue.value == "ii value") {
+		document.tagp.iivalue.value = "";
+	}
+}
+
+function szclearh() {
+	if (document.tagp.szvalueh.value == "sz value height") {
+		document.tagp.szvalueh.value = "";
+	}
+}
+
+function szclearw() {
+	if (document.tagp.szvaluew.value == "sz value width") {
+		document.tagp.szvaluew.value = "";
+	}
+}
+
+function evclear() {
+	if (document.tagp.evvalue.value == "ev value") {
+		document.tagp.evvalue.value = "";
+	}
+}
+
+function mveclear() {
+	if (document.tagp.mvevalue.value == "mve value") {
+		document.tagp.mvevalue.value = "";
+	}
+}
+
+function mheclear() {
+	if (document.tagp.mhevalue.value == "mhe value") {
+		document.tagp.mhevalue.value = "";
+	}
+}
+
+function dfpclear() {
+	if (document.tagp.dfpvalue.value == "dfp value") {
+		document.tagp.dfpvalue.value = "";
+	}
+}
+
+function uumclear() {
+	if (document.tagp.uumvalue.value == "uum value") {
+		document.tagp.uumvalue.value = "";
+	}
+}
+
+function clclear() {
+	if (document.tagp.clvalue.value == "cl value") {
+		document.tagp.clvalue.value = "";
+	}
+}
+
+function caclear() {
+	if (document.tagp.cavalue.value == "ca value") {
+		document.tagp.cavalue.value = "";
+	}
+}
+
+function plclear() {
+	if (document.tagp.plvalue.value == "pl value") {
+		document.tagp.plvalue.value = "";
+	}
+}
+
+function crclear() {
+	if (document.tagp.crvalue.value == "cr value") {
+		document.tagp.crvalue.value = "";
+	}
+}
+
+function tpclear() {
+	if (document.tagp.tpvalue.value == "tp value") {
+		document.tagp.tpvalue.value = "";
+	}
+}
+function tsclear() {
+	if (document.tagp.tsvalue.value == "ts value") {
+		document.tagp.tsvalue.value = "";
+	}
+}
+
+
+
+function cnfill() {
+	if (document.tagp.cnvalue.value == "") {
+		document.tagp.cnvalue.value = "cn value";
+	}
+}
+
+function iifill() {
+	if (document.tagp.iivalue.value == "") {
+		document.tagp.iivalue.value = "ii value";
+	}
+}
+
+function szfillh() {
+	if (document.tagp.szvalueh.value == "") {
+		document.tagp.szvalueh.value = "sz value height";
+	}
+}
+
+function szfillw() {
+	if (document.tagp.szvaluew.value == "") {
+		document.tagp.szvaluew.value = "sz value width";
+	}
+}
+
+function evfill() {
+	if (document.tagp.evvalue.value == "") {
+		document.tagp.evvalue.value = "ev value";
+	}
+}
+
+function mvefill() {
+	if (document.tagp.mvevalue.value == "") {
+		document.tagp.mvevalue.value = "mve value";
+	}
+}
+function mhefill() {
+	if (document.tagp.mhevalue.value == "") {
+		document.tagp.mhevalue.value = "mhe value";
+	}
+}
+
+function dfpfill() {
+	if (document.tagp.dfpvalue.value == "") {
+		document.tagp.dfpvalue.value = "dfp value";
+	}
+}
+
+function uumfill() {
+	if (document.tagp.uumvalue.value == "") {
+		document.tagp.uumvalue.value = "uum value";
+	}
+}
+
+
+function clfill() {
+	if (document.tagp.clvalue.value == "") {
+		document.tagp.clvalue.value = "cl value";
+	}
+}
+
+function cafill() {
+	if (document.tagp.cavalue.value == "") {
+		document.tagp.cavalue.value = "ca value";
+	}
+}
+
+function plfill() {
+	if (document.tagp.plvalue.value == "") {
+		document.tagp.plvalue.value = "pl value";
+	}
+}
+
+function crfill() {
+	if (document.tagp.crvalue.value == "") {
+		document.tagp.crvalue.value = "cr value";
+	}
+}
+
+function tpfill() {
+	if (document.tagp.tpvalue.value == "") {
+		document.tagp.tpvalue.value = "tp value";
+	}
+}
+
+function tsfill() {
+	if (document.tagp.tsvalue.value == "") {
+		document.tagp.tsvalue.value = "ts value";
+	}
+}
+
+
+
+
+
+</script>
+
+
+
+</head>
+
+
+<body >
+
+<div >
+
+	<h1> Ad-Metrics </h1>
+
+	<form name="tagp" action="">
+
+
+
+
+	
+
+	<br>
+	
+			<h2> choose tag type</h2>
+	
+			<input type="radio" name="example" value="generic" onclick="chooseTag()"> Generic 
+			&nbsp;&nbsp;|
+
+			<input type="radio" name="example" value="roverMediaplex" onclick="chooseTag()" onclick="akktualisieren()"> Rover/Mediaplex
+			&nbsp;&nbsp;|
+			<input type="radio" name="example" value="mediaMind" onclick="chooseTag()" onclick="akktualisieren()"> MediaMind
+			<br/>
+			
+			<br/>
+			<hr>
+			
+
+
+
+	
+
+
+
+
+	
+			<h1> choose script parameters </h1>
+			___________________________________________
+
+			<h2> content node (cn) </h2>
+
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="720px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usecn" onclick="akktualisieren()" value="true"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="cndefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="cnvalue" value="cn value" onkeyup="akktualisieren()" onfocus="cnclear()" onblur="cnfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>The metrics javascript code needs to determine the extends and visibility bounds of the ad tag or creative to measure correctly. Depending on how you integrate metrics - specific methods to detect the visibility need to be used.</p>
+
+							<p>If you integrate metrics.js in the same iframe as the actual creative or ad. Then no specific value needs to be set.</p>
+
+							<p>If the metrics js code is side loaded (that is the case if it is being used as a 3rd party tracking pixel) that sits outside of the ads iframe <strong>or</strong> no iframe is used you can either specifcy the ad's dom node by passing its id directly or use one of the other methods losted below:</p>
+
+							<p>You <strong>must not use 0</strong> if you cannot guarantee that the metrics code ad will be served from within the ads iframe.</p>
+							<code>cn=0         # document body (only in iframe)<br/>
+								cn=1           # first div element preceding the script element<br/>
+							cn=5                # vendor specific lookup &lt;script src="../metrics.js"id="abcd_efgh" <br/>
+                    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# content node will be &lt;object id="efgh"&gt;<br/>
+							cn=elementId<br/>
+							default: 0
+							</code>	
+						</td>
+				</tr>
+
+			</table>
+
+
+
+<!--____________________________________________________________________________-->
+
+	<hr>
+			<h2> impression id (ii) </h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="710px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="useii" onclick="akktualisieren()"onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							</p>
+							<p> <input type="string" name="iivalue" value="ii value" onkeyups="akktualisieren()" onfocus="iiclear()" onblur="iifill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							
+							Unique Identifier for the impression.
+						</td>
+				</tr>
+
+			</table>
+<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> ad size (sz) </h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usesz" onclick="akktualisieren()" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="szdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="szvalueh" value="sz value height" onkeyup="akktualisieren()" onfocus="szclearh()" onblur="szfillh()"> </p>
+							<p> <input type="string" name="szvaluew" value="sz value width" onkeyup="akktualisieren()"onfocus="szclearw()" onblur="szfillw()"> </p>
+
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>The <code>sz</code> parameter specifies the ad's dimensions.</p>
+							<code>
+							sz=300x200
+							<br/>
+							sz=0x0
+							<br/>
+							default: 0x0 (autodetect when loaded)
+							</code>
+							<p>The <strong>autodection of the ad's size will not work if the ad is embedded directly into the page</strong> (not served in an iframe). It is recommended that you always set this to the correct value.</p>
+						</td>
+				</tr>
+
+			</table>
+
+<!--____________________________________________________________________________-->			
+<hr>
+			<h2> event config (ev) </h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="useev" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="evdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="evvalue" value="ev value" onkeyup="akktualisieren()" onfocus="evclear()" onblur="evfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<code>default: lfvc
+							</code>
+
+<p>The <code>ev</code> parameter specifies which event types you want to track. Depending on the privacy and data protection requirements you may not want to track engagement device finger printing events. The value is a string with the follwing characters:</p>
+
+<ul>
+<li><code>i</code>: <a href="#impression">Impression</a>     (download of the metrics.js script)</li>
+<li><code>l</code>: <a href="#load">Load</a>                 (load and execution of metrics.js with info browser features)</li>
+<li><code>v</code>: <a href="#visible">Visibile</a>          (ad was visible for a period)</li>
+<li><code>c</code>: <a href="#click">Click</a>               (ad was clicked)</li>
+<li><code>h</code>: <a href="#hover">Hover</a>               (cursor moved over the ad)</li>
+<li><code>u</code>: <a href="#unload">Unload</a>             (the ad or page is removed)</li>
+<li><code>f</code>: <a href="#fingerprint">Fingerprint</a>   (finger print user device)</li>
+</ul>
+
+
+<p>So</p>
+
+<pre><code>ev=lvc
+</code></pre>
+
+<p>will track the load, visble and click events. This is also the default setting.</p>
+							
+						</td>
+				</tr>
+
+			</table>
+
+
+			<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> Maximum Visibility Events (mve)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usemve" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="mvedefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="mvevalue" value="mve value" onkeyup="akktualisieren()" onfocus="mveclear()" onblur="mvefill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>This parameter controls how many vis events you want to capture per impression. If you want to report on dwell or capture visibility duration you need to omit this parameter.</p>
+
+							<code>mve=1       only one visibilty event will be sent 
+							<br/>
+							default:    unlimited
+							</code>
+
+				
+
+
+						</td>
+				</tr>
+
+			</table>
+				<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> Maximum Hover Events (mhe)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usemhe" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="mhedefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="mhevalue" value="mhe value" onkeyup="akktualisieren()" onfocus="mheclear()" onblur="mhefill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+						
+							<p>This parameter controls how many hover events you want to capture per impression. If you want to report on dwell or engagament  time you need to omit this parameter.</p>
+
+							<code>mhe=1       only events for one hover interaction (in, move, out) will be sent<br/>
+							default:    unlimited
+							</code>	
+
+
+						</td>
+				</tr>
+
+			</table>
+							<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> Device Fingerprint (dfp)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usedfp" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="dfpdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="dfpvalue" value="dfp value" onkeyup="akktualisieren()" onfocus="dfpclear()" onblur="dfpfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>This parameter controls wether you want to have user device fingerprinting calculated.</p>
+
+							<code>dfp=0       disable fingerprint event<br/>
+							default: 1
+							</code>
+
+				
+
+
+						</td>
+				</tr>
+
+			</table>
+										<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> uuid model (uum)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="useuum" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="uumdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="uumvalue" value="uum value" onkeyup="akktualisieren()" onfocus="uumclear()" onblur="uumfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>Select the matching algorithm which should be used to match and generate a uuid based on the device fingerprint.</p>
+
+							<code>uum=0<br/>
+								default: 0
+								</code>
+
+				
+
+
+						</td>
+				</tr>
+
+			</table>
+
+													<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> client identifier (cl)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usecl" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="cldefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="clvalue" value="cl value" onkeyup="akktualisieren()" onfocus="clclear()" onblur="clfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+						
+						<p>Your client identifier.</p>
+
+						<code>cl=01234
+						<br/>
+						default: _
+						</code>
+
+				
+
+
+						</td>
+				</tr>
+
+			</table>
+
+							<!--____________________________________________________________________________-->
+
+<hr>
+			<h2> campaign identifier (ca)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="useca" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="cadefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="cavalue" value="ca value" onkeyup="akktualisieren()" onfocus="caclear()" onblur="cafill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+						<p>Your campaign identifier. This should correspond to your internal campaign id.</p>
+
+						<code>ca=01234
+						<br/>
+						default: _
+						</code>
+
+				
+
+
+						</td>
+				</tr>
+
+			</table>
+
+							<!--____________________________________________________________________________-->
+
+<hr>
+			<h2>placement / rotation identifier (pl)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usepl" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="pldefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="plvalue" value="pl value" onkeyup="akktualisieren()" onfocus="plclear()" onblur="plfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+						<p>Your placement or rotation identifier.</p>
+
+						<code>pl=01234
+						<br/>
+						default: _
+						</code>
+
+						</td>
+				</tr>
+
+			</table>
+
+
+								<!--____________________________________________________________________________-->
+
+<hr>
+			<h2>creative identifier (cr)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usecr" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="crdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="crvalue" value="cr value" onkeyup="akktualisieren()" onfocus="crclear()" onblur="crfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+						<p>Your creative or concept identifier.</p>
+
+						<code>cr=01234
+						<br/>
+						default: _
+						</code>
+						</td>
+				</tr>
+
+			</table>
+
+										<!--____________________________________________________________________________-->
+
+<hr>
+			<h2>publisher identifier (tp)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usetp" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="tpdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="tpvalue" value="tp value" onkeyup="akktualisieren()" onfocus="tpclear()" onblur="tpfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>The publisher id.</p>
+
+							<code>tp=01234
+							<br/>
+							default: _
+							</code>
+						
+						</td>
+				</tr>
+
+			</table>
+
+								<!--____________________________________________________________________________-->
+
+<hr>
+			<h2>sub-publisher identifier (ts)</h2>
+	<br>
+
+
+			<table >
+			<colgroup>
+			<col width="300px">
+			<col width="700px">
+			</colgroup>
+				<tr>
+						<td width="300px">
+							<p>
+							<input type="checkbox" name="usets" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="tsdefault" onclick="akktualisieren()"> &nbsp; default value
+							</p>
+							<p> <input type="string" name="tsvalue" value="ts value" onkeyup="akktualisieren()" onfocus="tsclear()" onblur="tsfill()"> </p>
+
+
+
+						</td> 
+						<td bgcolor="E0E0E0">
+							<p>The sub publisher id. Useful to segment publishers.</p>
+
+							<code>ts=01234
+							<br/>
+							default: _
+							</code>
+						
+						</td>
+				</tr>
+
+			</table>
+
+						<!--____________________________________________________________________________-->
+
+<hr>
+			<h1>complete tag </h1>
+	<br>
+
+
+
+ <textarea name="tagausgabe" cols="100" rows="10" onfocus="akktualisieren()"></textarea>
+
+
+</form>
+</div>
+
+
+
+</body>
+</html>
