@@ -1,17 +1,15 @@
 <html>
-
 <head>
-	<title> Ad-Metrics Nexttuesday </title>
 
 	<style type="text/css">
 
 
 
-	hr {margin:1em 0;
-	font-size:12px;
+	hr {margin:1.1em 0;
+	font-size:10px;
 	background-color: C0BDB3;
-	border:1px solid wight;
-	padding:2px;
+	border:12px solid wight;
+	padding:1px;
 	line-height:3px;
 	color:#444;
 	overflow:auto;
@@ -19,7 +17,7 @@
 	}
 	
 	body {
-		font:13.34px helvetica,arial,freesans,clean,sans-serif;
+		font-family: arial;
 	color:black;
 	line-height:1.4em;
 	padding: 0.7em;
@@ -53,7 +51,9 @@ code {
 	border:1px solid #dedede;
 }
 
-table td {border-bottom:0px solid #ddd;padding:.2em 1em; }
+table td {border-bottom:0px solid #ddd;padding:.3em 1em; }
+table {border-spacing: 0px;}
+input {margin: 4px;}
 
 </style>
 
@@ -63,701 +63,272 @@ table td {border-bottom:0px solid #ddd;padding:.2em 1em; }
 
 
 
+
 <script type="text/javascript">
 
+function start() {
 
-
-var parameter = ["cn","ii","sz","ev","mve","mhe"];
-var wert = ["","","","","",""];
-var default_wert = [""]
-
-function akktualisieren(){
-
-for (var i=0 ; i<6 ; i++) {
-			if (document.tagp["use" + parameter[i]].checked) {
-				if (document.tagp.parameter[i] + "default".checked){
-					wert[i] = "&" + document.tagp.parameter[i] + "=" + default_wert[i];
-					} else {
-						if (document.tagp.parameter[i].value != parameter[i] + " value" && document.tagp.parameter[i].value != ""){
-							wert[i] = document.tagp.parameter[i].value;
-						} else {
-							wert[i] = "";
-						}
-					}
-			} else {
-				wert[i] = "";
-			}
-
+	var a = "" 
+var werte = {cn: "1" , ii: "2" , sz: "" , ev: "" , mve: "" , mhe: ""};
+var b = new Array();
+var formelement ="";
+var inhalt = ""
+for (var key in werte) {
+b.push(key)
 }
 
-ausgabe();
+for (var i = 0  ; i < b.length ; i++ ) {
+	
+	 formelement = document.getElementById("param_"+b[i]);
+	 if (formelement.checked) {
+	 	inhalt += "&"+ b[i] + "=" + document.getElementById(b[i]).value ;
+	 }
+
 
 }
-
-function chooseTag() {
-
+document.tagp.tagausgabe.value = inhalt ; 
 }
-
-function ausgabe() {
-
-	if (document.tagp.example.value == "generic") {
-		var strg1 = document.getElementById("genericString1");
-		var strg2 = document.getElementById("genericString2");
-		var strg3 = document.getElementById("genericString3");
-		document.tagp.tagausgabe.value = ( " \<script async type=\"text/javascript\"src=\"http://metrics.nt.vc/metrics.js?\"" + ii + cn + sz + ev + mve + mhe + dfp + uum + cl + ca + pl + cr + tp + ts + 	"\">\</scr" + "ipt><noscript>\<img src=\"http://metrics.nt.vc/metrics.gif? + strg3.innerText;>\</noscript>");
-
-		
-	}
-
-
-	else if (document.tagp.example.value == "roverMediaplex") {
-		var strrm1 = document.getElementById("roverMediaplexString1");
-		var strrm2 = document.getElementById("roverMediaplexString2");
-		document.tagp.tagausgabe.value = 
-("var am_host = (window.isSecure ? \" https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"),		  am_src = am_host + \"/metrics.js?ii=\" + window.rvr_id + \"&cn=foldcheck\" + window.rvr_id + \"&sz=\" + window.mpcrw + \"x\" + window.mpcrh +  \"&cl=\" + window.siteID + \"&ee=\" + window.ntee + \"&es=\" + window.ntes + \"&ed=\" + window.nted + \"&ep=\" + window.ntep + \"&est=\" + window.ntest + \"&ec=\" + window.ntec + \"&pl=\" + window.M1 + \"&cr=\" + window.M2 + \"&hu=\" + window.hu \""+ ev + mve + mhe + dfp + uum + ca + tp + ts +  "," + "am_sc" + "ript = \'\<scr' + \'ipt type=\"text/javascript\" src=\"\' + am_src + \'\"></scr\' + 'ipt>';window.dfpCallback = function(dfp) {// this function is called by am_script once the fingerprint is readyvar uuid_src = am_host + \"/uuid/\" + dfp + \"?jsonp=uuidCallback\",  uuid_script = '<scr' + \'ipt type=\"text/javascript\" src=\"\' + uuid_src + \'\"></scr\' + \'ipt>\';  if (window.DocumentWrite) { DocumentWrite(uuid_script); } else { document.write(uuid_script);}};window.uuidCallback = function(uuid) { // parse integer for targeting purposes  var n = parseInt(uuid.slice(0, 12), 16);};if (window.DocumentWrite) { DocumentWrite(am_script);} else {  document.write(am_script);};")
-
-	}
-
-
-
-
-
-	else if (document.tagp.example.value == "mediaMind") {
-		var strmm1 = document.getElementById("mediaMindString1");
-		var strmm2 = document.getElementById("mediaMindString2");
-
-		document.tagp.tagausgabe.value =
-
-
-"\<scr" + "ipt type=\"text/jav" + "ascript\">(function(){var e = document.getElementsByTagName(\"scr" + "ipt\")[0];var d = document.createElement(\"script\");var am_host = ((location.protocol === 'https:') ? \"https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"), am_src = am_host + \"/metrics.js?ii=\" + 67 + \"\" + (+new Date()) + \"&cn=1\" + \"&sz=[%tp_AdFormat%]\" + \"&hu=\" + window.hu + \"&cl=707&pl=707186007513190&cr=15516023"+ ev + mve + mhe + dfp + uum + ca + tp + ts + "\";d.src = am_src;d.type = \"text/ja" + "vascript\"; e.parentNode.insertBefore(d,e);})();</sc" + "ript>";
-
-
-
-	}
-
-
-
-
-
-
-
-	else { alert("first choose a tag type");
-		
-			}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
-
-
-
 </head>
 
+<body onload="start()">
 
-<body >
-
-<div >
-
-	<h1> Ad-Metrics </h1>
-
-	<form name="tagp" action="">
-
-
-
-
-	
-
-	<br>
-	
-			<h2> choose tag type</h2>
-	
-			<input type="radio" name="example" value="generic" onclick="chooseTag()"> Generic 
-			&nbsp;&nbsp;|
-
-			<input type="radio" name="example" value="roverMediaplex" onclick="chooseTag()" onclick="akktualisieren()"> Rover/Mediaplex
-			&nbsp;&nbsp;|
-			<input type="radio" name="example" value="mediaMind" onclick="chooseTag()" onclick="akktualisieren()"> MediaMind
-			<br/>
-			
-			<br/>
-			<hr>
-			
-
-
-
-	
-
-
-
-
-	
-			<h1> choose script parameters </h1>
-			___________________________________________
-
-			<h2> content node (cn) </h2>
-
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="720px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usecn" onclick="akktualisieren()" value="true"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="cndefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="cnvalue" value="cn value" onkeyup="akktualisieren()" onfocus="cnclear()" onblur="cnfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>The metrics javascript code needs to determine the extends and visibility bounds of the ad tag or creative to measure correctly. Depending on how you integrate metrics - specific methods to detect the visibility need to be used.</p>
-
-							<p>If you integrate metrics.js in the same iframe as the actual creative or ad. Then no specific value needs to be set.</p>
-
-							<p>If the metrics js code is side loaded (that is the case if it is being used as a 3rd party tracking pixel) that sits outside of the ads iframe <strong>or</strong> no iframe is used you can either specifcy the ad's dom node by passing its id directly or use one of the other methods losted below:</p>
-
-							<p>You <strong>must not use 0</strong> if you cannot guarantee that the metrics code ad will be served from within the ads iframe.</p>
-							<code>cn=0         # document body (only in iframe)<br/>
-								cn=1           # first div element preceding the script element<br/>
-							cn=5                # vendor specific lookup &lt;script src="../metrics.js"id="abcd_efgh" <br/>
-                    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# content node will be &lt;object id="efgh"&gt;<br/>
-							cn=elementId<br/>
-							default: 0
-							</code>	
-						</td>
-				</tr>
-
-			</table>
-
-
-
-<!--____________________________________________________________________________-->
-
+	<h1>  Ad-Metrics</h1>
 	<hr>
-			<h2> impression id (ii) </h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="710px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="useii" onclick="akktualisieren()"onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							</p>
-							<p> <input type="string" name="iivalue" value="ii value" onkeyups="akktualisieren()" onfocus="iiclear()" onblur="iifill()"> </p>
-
 
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							
-							Unique Identifier for the impression.
-						</td>
-				</tr>
+	<h2>choose Tag type</h2>
+	<input type="radio" name="examle" value="generic">Generic  |
+	<input type="radio" name="examle" value="rover/mediaplex">Rover/Mediaplex  |
+	<input type="radio" name="examle" value="mediamind">MediaMind
+	<hr>
+	<h2>choose Script parameters </h2>
+
+	
+
+
+
+
+
+<table> 
+	<colgroup>
+		<col width="290px">
+		<col width="90px" >
+		<col width="450">
+	</colgroup>
+
+	<tr > 
+		<td> Device Fingerprint (dfp)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+			<div align="right">
+			<input type="radio" name="track" value="true">enable |<input type="radio" name="track" value="false"> disable</td>
+		</div>
+	</tr>
+
+	
+		<tr bgcolor="CECDCD" > 
+		<td> event config (ev)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td > 
+				<div align="right">
+					<input type="checkbox" id="param_cn">i|
+					<input type="checkbox" id="param_cn">l|
+					<input type="checkbox" id="param_cn">v|
+					<input type="checkbox" id="param_cn">c|
+					<input type="checkbox" id="param_cn">h|
+					<input type="checkbox" id="param_cn">u|
+					<input type="checkbox" id="param_cn">f|
+				</div>	
+
+		</td>
+	</tr>
+
+	<tr > 
+		<td> ad size (sz)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+				<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+		</td>
+	</tr>
+
+
+
+
+	<tr bgcolor="CECDCD"> 
+		<td> Maximum Visibility Events (mve)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+				<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+
+		</td>
+	</tr>
+
+	<tr > 
+		<td> Maximum Hover Events (mhe)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+				<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+
+		</td>
+	</tr>
+	
+	
+	<tr bgcolor="CECDCD"> 
+		<td>content node (cn) </td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td>
+			<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+		</td>
+	</tr>
+
+	<tr > 
+		<td> uuid model (uum)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+				<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+
+		</td>
+	</tr>
+
+	<tr bgcolor="CECDCD"> 
+		<td> client identifier (cl)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+				<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+
+		</td>
+	</tr>
+
+	<tr > 
+		<td> campaign identifier (ca)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td>
+				<div align="right">
+			<select name="top5" size="1" >
+			    <option>default</option>
+			    <option>welt</option>
+			    <option>alles</option>
+			    <option>klar</option>
+			    <option><input type="string"></option>
+   			 </select>
+   			</div>
+
+		 </td>
+	</tr>
+
+	<tr bgcolor="CECDCD"> 
+		<td> placement / rotation identifier (pl)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+			<div align="right">
+				<input type="string">
+			</div>
+		</td>
+	</tr>
+
+	<tr > 
+		<td> creative identifier (cr)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+			<div align="right">
+				<input type="string">
+			</div>
+		</td>
+	</tr>
+
+
+	<tr bgcolor="CECDCD"> 
+		<td> publisher identifier (tp)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+			<div align="right">
+			<input type="string">
+		</div>
+		</td>
+	</tr>
+
+	<tr > 
+		<td> sub-publisher identifier (ts)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+			<div align="right">
+			<input type="string">
+		</div>
+		</td>
+	</tr>
+
+	<tr bgcolor="CECDCD"> 
+		<td> impression id (ii)</td>
+		<td> <input type="checkbox" id="param_cn"> use</td>
+		<td> 
+			<div align="right">
+				<input type="string">
+			</div>
+		</td>
+	</tr>
+
+
+
+
+	
 
-			</table>
-<!--____________________________________________________________________________-->
 
-<hr>
-			<h2> ad size (sz) </h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usesz" onclick="akktualisieren()" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="szdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="szvalueh" value="sz value height" onkeyup="akktualisieren()" onfocus="szclearh()" onblur="szfillh()"> </p>
-							<p> <input type="string" name="szvaluew" value="sz value width" onkeyup="akktualisieren()"onfocus="szclearw()" onblur="szfillw()"> </p>
-
 
 
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>The <code>sz</code> parameter specifies the ad's dimensions.</p>
-							<code>
-							sz=300x200
-							<br/>
-							sz=0x0
-							<br/>
-							default: 0x0 (autodetect when loaded)
-							</code>
-							<p>The <strong>autodection of the ad's size will not work if the ad is embedded directly into the page</strong> (not served in an iframe). It is recommended that you always set this to the correct value.</p>
-						</td>
-				</tr>
-
-			</table>
-
-<!--____________________________________________________________________________-->			
-<hr>
-			<h2> event config (ev) </h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="useev" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="evdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="evvalue" value="ev value" onkeyup="akktualisieren()" onfocus="evclear()" onblur="evfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<code>default: lfvc
-							</code>
-
-<p>The <code>ev</code> parameter specifies which event types you want to track. Depending on the privacy and data protection requirements you may not want to track engagement device finger printing events. The value is a string with the follwing characters:</p>
-
-<ul>
-<li><code>i</code>: <a href="#impression">Impression</a>     (download of the metrics.js script)</li>
-<li><code>l</code>: <a href="#load">Load</a>                 (load and execution of metrics.js with info browser features)</li>
-<li><code>v</code>: <a href="#visible">Visibile</a>          (ad was visible for a period)</li>
-<li><code>c</code>: <a href="#click">Click</a>               (ad was clicked)</li>
-<li><code>h</code>: <a href="#hover">Hover</a>               (cursor moved over the ad)</li>
-<li><code>u</code>: <a href="#unload">Unload</a>             (the ad or page is removed)</li>
-<li><code>f</code>: <a href="#fingerprint">Fingerprint</a>   (finger print user device)</li>
-</ul>
-
-
-<p>So</p>
-
-<pre><code>ev=lvc
-</code></pre>
-
-<p>will track the load, visble and click events. This is also the default setting.</p>
-							
-						</td>
-				</tr>
-
-			</table>
-
-
-			<!--____________________________________________________________________________-->
-
-<hr>
-			<h2> Maximum Visibility Events (mve)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usemve" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="mvedefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="mvevalue" value="mve value" onkeyup="akktualisieren()" onfocus="mveclear()" onblur="mvefill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>This parameter controls how many vis events you want to capture per impression. If you want to report on dwell or capture visibility duration you need to omit this parameter.</p>
-
-							<code>mve=1       only one visibilty event will be sent 
-							<br/>
-							default:    unlimited
-							</code>
-
-				
-
-
-						</td>
-				</tr>
-
-			</table>
-				<!--____________________________________________________________________________-->
-
-<hr>
-			<h2> Maximum Hover Events (mhe)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usemhe" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="mhedefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="mhevalue" value="mhe value" onkeyup="akktualisieren()" onfocus="mheclear()" onblur="mhefill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-						
-							<p>This parameter controls how many hover events you want to capture per impression. If you want to report on dwell or engagament  time you need to omit this parameter.</p>
-
-							<code>mhe=1       only events for one hover interaction (in, move, out) will be sent<br/>
-							default:    unlimited
-							</code>	
-
-
-						</td>
-				</tr>
-
-			</table>
-							<!--____________________________________________________________________________-->
-
-<hr>
-			<h2> Device Fingerprint (dfp)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usedfp" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="dfpdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="dfpvalue" value="dfp value" onkeyup="akktualisieren()" onfocus="dfpclear()" onblur="dfpfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>This parameter controls wether you want to have user device fingerprinting calculated.</p>
-
-							<code>dfp=0       disable fingerprint event<br/>
-							default: 1
-							</code>
-
-				
-
-
-						</td>
-				</tr>
-
-			</table>
-										<!--____________________________________________________________________________-->
-
-<hr>
-			<h2> uuid model (uum)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="useuum" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="uumdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="uumvalue" value="uum value" onkeyup="akktualisieren()" onfocus="uumclear()" onblur="uumfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>Select the matching algorithm which should be used to match and generate a uuid based on the device fingerprint.</p>
-
-							<code>uum=0<br/>
-								default: 0
-								</code>
-
-				
-
-
-						</td>
-				</tr>
-
-			</table>
-
-													<!--____________________________________________________________________________-->
-
-<hr>
-			<h2> client identifier (cl)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usecl" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="cldefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="clvalue" value="cl value" onkeyup="akktualisieren()" onfocus="clclear()" onblur="clfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-						
-						<p>Your client identifier.</p>
-
-						<code>cl=01234
-						<br/>
-						default: _
-						</code>
-
-				
-
-
-						</td>
-				</tr>
-
-			</table>
-
-							<!--____________________________________________________________________________-->
-
-<hr>
-			<h2> campaign identifier (ca)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="useca" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="cadefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="cavalue" value="ca value" onkeyup="akktualisieren()" onfocus="caclear()" onblur="cafill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-						<p>Your campaign identifier. This should correspond to your internal campaign id.</p>
-
-						<code>ca=01234
-						<br/>
-						default: _
-						</code>
-
-				
-
-
-						</td>
-				</tr>
-
-			</table>
-
-							<!--____________________________________________________________________________-->
-
-<hr>
-			<h2>placement / rotation identifier (pl)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usepl" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="pldefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="plvalue" value="pl value" onkeyup="akktualisieren()" onfocus="plclear()" onblur="plfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-						<p>Your placement or rotation identifier.</p>
-
-						<code>pl=01234
-						<br/>
-						default: _
-						</code>
-
-						</td>
-				</tr>
-
-			</table>
-
-
-								<!--____________________________________________________________________________-->
-
-<hr>
-			<h2>creative identifier (cr)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usecr" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="crdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="crvalue" value="cr value" onkeyup="akktualisieren()" onfocus="crclear()" onblur="crfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-						<p>Your creative or concept identifier.</p>
-
-						<code>cr=01234
-						<br/>
-						default: _
-						</code>
-						</td>
-				</tr>
-
-			</table>
-
-										<!--____________________________________________________________________________-->
-
-<hr>
-			<h2>publisher identifier (tp)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usetp" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="tpdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="tpvalue" value="tp value" onkeyup="akktualisieren()" onfocus="tpclear()" onblur="tpfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>The publisher id.</p>
-
-							<code>tp=01234
-							<br/>
-							default: _
-							</code>
-						
-						</td>
-				</tr>
-
-			</table>
-
-								<!--____________________________________________________________________________-->
-
-<hr>
-			<h2>sub-publisher identifier (ts)</h2>
-	<br>
-
-
-			<table >
-			<colgroup>
-			<col width="300px">
-			<col width="700px">
-			</colgroup>
-				<tr>
-						<td width="300px">
-							<p>
-							<input type="checkbox" name="usets" onclick="akktualisieren()"> &nbsp; use &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" name="tsdefault" onclick="akktualisieren()"> &nbsp; default value
-							</p>
-							<p> <input type="string" name="tsvalue" value="ts value" onkeyup="akktualisieren()" onfocus="tsclear()" onblur="tsfill()"> </p>
-
-
-
-						</td> 
-						<td bgcolor="E0E0E0">
-							<p>The sub publisher id. Useful to segment publishers.</p>
-
-							<code>ts=01234
-							<br/>
-							default: _
-							</code>
-						
-						</td>
-				</tr>
-
-			</table>
-
-						<!--____________________________________________________________________________-->
-
-<hr>
-			<h1>complete tag </h1>
-	<br>
-
-
-
- <textarea name="tagausgabe" cols="100" rows="10" onfocus="akktualisieren()"></textarea>
 
 
 </form>
-</div>
-
-
-
 </body>
 </html>
+
+
+
