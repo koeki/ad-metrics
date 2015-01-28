@@ -1,0 +1,68 @@
+
+
+hr {margin:1.1em 0;
+	font-size:10px;
+	background-color: C0BDB3;
+	border:12px solid wight;
+	padding:1px;
+	line-height:3px;
+	color:#444;
+	overflow:auto;
+	-webkit-border-radius:3px;
+}
+
+
+body {
+	font-family: arial;
+	color:black;
+	line-height:1.4em;
+	padding: 0.7em;
+}
+
+@media screen and (min-width: 914px) {
+
+body {
+    width: 854px;
+    margin:0 auto;
+}
+
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+
+table td {border-bottom:0px solid #ddd;padding:.3em 1em; }
+table {border-spacing: 1px;}
+input {margin: 4px;}
+
+input[type="button"] {margin-left: 14px;
+}
+
+
+
+
+a.infobox { text-decoration:none; font-family: arial;padding: 2px;}
+  a.infobox:hover {  color:; background:white; }
+  a.infobox span { visibility:hidden; position:absolute; left:300px;
+    margin-top:1.5em; padding:1em; text-decoration:none;  font-color:black;}
+  a.infobox:hover span, a.infobox:focus span, a.infobox:active span {
+    visibility:visible; left:1em;
+    border:1px solid ; color:#A2A2A2; background:white;  font-color:black; }
+
+    select {max-width: 200px;min-width: 90px}
