@@ -91,7 +91,7 @@ var evw = new Array("i","l","v","c","h","u","f");
 					 	}
 					 }
 //device fingerprint 
-					 if (formelement.checked && t == 1 && b[i] == "dfp" ) {
+					 if (formelement.checked && b[i] == "dfp" ) {
 					 	
 					 	var inhaltdfp ="";
 					 		
@@ -102,7 +102,7 @@ var evw = new Array("i","l","v","c","h","u","f");
 					 			inhaltdfp = "&dfp=0"
 					 		}
 
-					 	
+					 		inhalt += inhaltdfp;
 
 					 } else {
 					 	
@@ -110,7 +110,7 @@ var evw = new Array("i","l","v","c","h","u","f");
 
 //event config 					 
 
-					 if (formelement.checked && t == 2 && b[i]=="ev")	{
+					 if (formelement.checked && b[i]=="ev")	{
 
 						 var evvalue_step1 = "" ;
 						 var evvaluegesamt = "";
@@ -130,6 +130,7 @@ var evw = new Array("i","l","v","c","h","u","f");
 						 	}
 						 }
 
+						 inhalt += evvaluegesamt;
 						 
 
 					} else {
@@ -161,51 +162,28 @@ var evw = new Array("i","l","v","c","h","u","f");
 //sets select options (only one time)
 		function setddvalue() {
 			if (optd < 1){
-			
-				for (var i = 0 ; i < optvalue.length ; i++) {
-					opt = document.createElement("option") ;
-					opt.text = "";
-					opt.text = optvalue[i];
-					document.getElementById("szdd").appendChild(opt);
-				}
-
-				for (var i = 0 ; i < optcavalue.length ; i++) {
-					opt = document.createElement("option") ;
-					opt.text = "";
-					opt.text = optcavalue[i];
-					document.getElementById("cadd").appendChild(opt);
-				}
-
-				for (var i = 0 ; i < optclvalue.length ; i++) {
-					opt = document.createElement("option") ;
-					opt.text = "";
-					opt.text = optclvalue[i];
-					document.getElementById("cldd").appendChild(opt);
-				}
-
-				for (var i = 0 ; i < optmhevalue.length ; i++) {
-					opt = document.createElement("option") ;
-					opt.text = "";
-					opt.text = optmhevalue[i];
-					document.getElementById("mhedd").appendChild(opt);
-					
-				}
-
-				for (var i = 0 ; i < optmvevalue.length ; i++) {
-					opt = document.createElement("option") ;
-					opt.text = "";
-					opt.text = optmvevalue[i];
-					document.getElementById("mvedd").appendChild(opt);
-					
-				}
-
+				setopt(optvalue,"szdd");
+				setopt(optcavalue,"cadd");
+				setopt(optclvalue,"cldd");
+				setopt(optmhevalue,"mhedd");
+				setopt(optmvevalue,"mvedd");
 				optd++;
-			}
+			} 
+
 			akktualisieren();
 			defaultvalue();
+			}
+
+
+		function setopt(optv,namedd){
+		
+				for (var i = 0 ; i < optv.length ; i++) {
+						opt = document.createElement("option") ;
+						opt.text = "";
+						opt.text = optv[i];
+						document.getElementById(namedd).appendChild(opt);
+				}
 		}
-
-
 
 // sets value of textarea name="tagausgabe" id="tagausgabeid"
 		function ausgabe(inhalt){
