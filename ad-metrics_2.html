@@ -3,7 +3,7 @@
 
 	<link rel="stylesheet" href="css/adm_style.css">
 	<script type="text/javascript" src="js/ZeroClipboard.js"></script> 
-	<script type="text/javascript" src="js/adm_mainjs.js"></script>
+	<script type="text/javascript" src="js/adm_2testja.js"></script>
 	
 
 <body onload="start(1)">
@@ -42,7 +42,8 @@
 			<td> <input type="checkbox" id="param_dfp" onclick="akktualisieren(1)"> use</td>
 			<td> 
 				<div align="right">
-					<input type="radio" name="track" value="true" id="dfpid" onclick="akktualisieren(1)">enable |<input type="radio" name="track" value="false" id="dfpid" onclick="akktualisieren(1)"> disable
+					<input type="radio" name="track" value="enable" id="dfpid1" onclick="akktualisieren(1)">enable |
+					<input type="radio" name="track" value="disable" id="dfpid2" onclick="akktualisieren(1)"> disable
 					<a class="infobox" href="#INFO">i<span><p>This parameter controls wether you want to have user device fingerprinting calculated.</p>
 
 							<code>dfp=0       disable fingerprint event<br/>
@@ -99,9 +100,9 @@
 			<td> 
 				<div align="right">
 					<select id="szdd" size="1" onclick="akktualisierendd()" >
-					    <option>default</option>
-					    <option>own value<input type="string"  onkeyup="akktualisieren()" id="sz"></option>
-					   
+					    
+					    
+					   <input type="string"  onkeyup="akktualisieren()" id="sz">
 					    
 	   			 	</select>
 	   			 	<a class="infobox" href="#INFO">i<span><div align="left"><p>The <code>sz</code> parameter specifies the ad's dimensions.</p>
@@ -126,7 +127,7 @@
 			<td> 
 				<div align="right">
 					<select id="mvedd" size="1" onclick="akktualisierendd()" >
-				    	<option>default</option>
+				    	
 					   
 					    <input type="string" onkeyup="akktualisieren()" id="mve">
 		   			 </select>
@@ -148,7 +149,7 @@
 			<td> 
 				<div align="right">
 					<select id="mhedd" size="1" onclick="akktualisierendd()" >
-					    <option>default</option>
+					   
 					   
 					  <input type="string" onkeyup="akktualisieren()" id="mhe">
 		   			 </select>
@@ -156,8 +157,7 @@
 
 							<code>mhe=1       only events for one hover interaction (in, move, out) will be sent<br/>
 							default:    unlimited
-							</code>	
-</div></span></a>
+							</code>	</div></span></a>
 	   			</div>
 
 			</td>
@@ -170,10 +170,8 @@
 			<td>
 				<div align="right">
 					<select id="cndd" size="1" onclick="akktualisierendd()" >
-					    <option>default</option>
-					    <option>1</option>
-					    <option>5</option>
-					    <option>own value<input type="string" onkeyup="akktualisieren()" id="cn"></option>
+					    
+					    <input type="string" onkeyup="akktualisieren()" id="cn">
 		   			 </select>
 		   			 <a class="infobox" href="#INFO">i<span><div align="left">	<p>The metrics javascript code needs to determine the extends and visibility bounds of the ad tag or creative to measure correctly. <br>Depending on how you integrate metrics - specific methods to detect the visibility need to be used.</p>
 
@@ -199,8 +197,7 @@
 			<td> 
 				<div align="right">
 					<select id="uumdd" size="1" onclick="akktualisierendd()" >
-					    <option>0</option>
-					    <option>1</option>
+					   
 					    <input type="string" onkeyup="akktualisieren()" id="uum">
 		   			 </select>
 		   			 <a class="infobox" href="#INFO">i<span><div align="left">	<p>Select the matching algorithm which should be used to match and generate a uuid based on the device fingerprint.</p>
@@ -219,9 +216,9 @@
 			<td> 
 				<div align="right">
 					<select id="cldd" size="1" onclick="akktualisierendd()" >
-					    <option>default</option>
+					    
 					   
-					    <option>own value<input type="string" onkeyup="akktualisieren()" id="cl"></option>
+					    <input type="string" onkeyup="akktualisieren()" id="cl">
 		   			</select>
 		   			<a class="infobox" href="#INFO">i<span>	<div align="left">
 						<p>Your client identifier.</p>
@@ -242,8 +239,8 @@
 			<td>
 				<div align="right">
 					<select id="cadd" size="1" onclick="akktualisierendd()" >
-					    <option>default</option>
-					    <option>own value<input type="string" onkeyup="akktualisieren()" id="ca"> </option>
+					   
+					    <input type="string" onkeyup="akktualisieren()" id="ca"> 
 					
 		   			 </select>
 		   			 <a class="infobox" href="#INFO">i<span><div align="left">	<p>Your campaign identifier. This should correspond to your internal campaign id.</p>
