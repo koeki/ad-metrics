@@ -249,27 +249,7 @@ var inhalt_durchlauf =0;
 
 
 
-/*
 
-
-			if (document.tagp.example.value == "generic") {
-
-					document.tagp.tagausgabe.value = ( " \<script async type=\"text/javascript\"src=\"http://metrics.nt.vc/metrics.js?\"" + inhalt + 	"\">\</scr" + "ipt><noscript>\<img src=\"http://metrics.nt.vc/metrics.gif? + strg3.innerText;>\</noscript>");
-
-							
-				} else if (document.tagp.example.value == "rovermediaplex") {
-						
-					document.tagp.tagausgabe.value = ("var am_host = (window.isSecure ? \" https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"),		  am_src = am_host + \"/metrics.js?ii=\" + window.rvr_id + \"&cn=foldcheck\" + window.rvr_id + \"&sz=\" + window.mpcrw + \"x\" + window.mpcrh +  \"&cl=\" + window.siteID + \"&ee=\" + window.ntee + \"&es=\" + window.ntes + \"&ed=\" + window.nted + \"&ep=\" + window.ntep + \"&est=\" + window.ntest + \"&ec=\" + window.ntec + \"&pl=\" + window.M1 + \"&cr=\" + window.M2 + \"&hu=\" + window.hu \""+ inhalt +  "," + "am_sc" + "ript = \'\<scr' + \'ipt type=\"text/javascript\" src=\"\' + am_src + \'\"></scr\' + 'ipt>';window.dfpCallback = function(dfp) {// this function is called by am_script once the fingerprint is readyvar uuid_src = am_host + \"/uuid/\" + dfp + \"?jsonp=uuidCallback\",  uuid_script = '<scr' + \'ipt type=\"text/javascript\" src=\"\' + uuid_src + \'\"></scr\' + \'ipt>\';  if (window.DocumentWrite) { DocumentWrite(uuid_script); } else { document.write(uuid_script);}};window.uuidCallback = function(uuid) { // parse integer for targeting purposes  var n = parseInt(uuid.slice(0, 12), 16);};if (window.DocumentWrite) { DocumentWrite(am_script);} else {  document.write(am_script);};")
-
-				} else if (document.tagp.example.value == "mediamind") {
-						
-
-					document.tagp.tagausgabe.value ="\<scr" + "ipt type=\"text/jav" + "ascript\">(function(){var e = document.getElementsByTagName(\"scr" + "ipt\")[0];var d = document.createElement(\"script\");var am_host = ((location.protocol === 'https:') ? \"https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"), am_src = am_host + \"/metrics.js?ii=\" + 67 + \"\" + (+new Date()) + \"&cn=1\" + \"&sz=[%tp_AdFormat%]\" + \"&hu=\" + window.hu + \"&cl=707&pl=707186007513190&cr=15516023"+ inhalt + "\";d.src = am_src;d.type = \"text/ja" + "vascript\"; e.parentNode.insertBefore(d,e);})();</sc" + "ript>";
-
-				}
-		}
-
-*/
 
 // sets value of drop down textaias if the value isnt default or custom value 
 		function akktualisierendd() {
