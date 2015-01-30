@@ -35,12 +35,12 @@ var parameterconfig = { dfp:{type: "radio",		scope: 	{ enable:"1", disable:"0" }
 						};
 
 var output_config = [ " \<script async type=\"text/javascript\"src=\"http://metrics.nt.vc/metrics.js?\"",
-				"var am_host = (window.isSecure ? \" https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"),am_src = am_host + \"/metrics.js?ii=\" + window.rvr_id + \"&cn=foldcheck\" + window.rvr_id + \"&sz=\" + window.mpcrw + \"x\" + window.mpcrh +  \"&cl=\" + window.siteID + \"&ee=\" + window.ntee + \"&es=\" + window.ntes + \"&ed=\" + window.nted + \"&ep=\" + window.ntep + \"&est=\" + window.ntest + \"&ec=\" + window.ntec + \"&pl=\" + window.M1 + \"&cr=\" + window.M2 + \"&hu=\" + window.hu \"",
+				"var am_host = (window.isSecure ? \" https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"),am_src = am_host + \"/metrics.js?ii=\" + window.rvr_id + \"&cn=foldcheck\" + window.rvr_id + \"&sz=\" + window.mpcrw + \"x\" + window.mpcrh +  \"&cl=\" + window.siteID + \"&ee=\" + window.ntee + \"&es=\" + window.ntes + \"&ed=\" + window.nted + \"&ep=\" + window.ntep + \"&est=\" + window.ntest + \"&ec=\" + window.ntec + \"&pl=\" + window.M1 + \"&cr=\" + window.M2 + \"&hu=\" + window.hu \" + \"",
 				"\<scr" + "ipt type=\"text/jav" + "ascript\">(function(){var e = document.getElementsByTagName(\"scr" + "ipt\")[0];var d = document.createElement(\"script\");var am_host = ((location.protocol === \'https:\') ? \"https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"), am_src = am_host + \"/metrics.js?ii=\" + 67 + \"\" + (+new Date()) + \"&cn=1\" + \"&sz=[%tp_AdFormat%]\" + \"&hu=\" + window.hu + \"&cl=707&pl=707186007513190&cr=15516023","\";d.src = am_src;d.type = \"text/ja" + "vascript\"; e.parentNode.insertBefore(d,e);})();</sc" + "ript>"
 					];
 						
-var output_config2 = ["\">\</scr" + "ipt><noscript>\<img src=\"http://metrics.nt.vc/metrics.gif? + strg3.innerText;>\</noscript>",
-						  "," + "am_sc" + "ript = \'\<scr\' + \'ipt type=\"text/javascript\" src=\"\' + am_src + \'\"></scr\' + \'ipt>\';window.dfpCallback = function(dfp) {// this function is called by am_script once the fingerprint is readyvar uuid_src = am_host + \"/uuid/\" + dfp + \"?jsonp=uuidCallback\",  uuid_script = \'<scr\' + \'ipt type=\"text/javascript\" src=\"\' + uuid_src + \'\"></scr\' + \'ipt>\';  if (window.DocumentWrite) { DocumentWrite(uuid_script); } else { document.write(uuid_script);}};window.uuidCallback = function(uuid) { // parse integer for targeting purposes  var n = parseInt(uuid.slice(0, 12), 16);};if (window.DocumentWrite) { DocumentWrite(am_script);} else {  document.write(am_script);};",
+var output_config2 = ["\">\</scr" + "ipt><noscript>\<img src=\"http://metrics.nt.vc/metrics.gif?\"width=\"1\"height=\"1\">\</noscript>",
+						  "\"," + "am_sc" + "ript = \'\<scr\' + \'ipt type=\"text/javascript\" src=\"\' + am_src + \'\"></scr\' + \'ipt>\';window.dfpCallback = function(dfp) {// this function is called by am_script once the fingerprint is readyvar uuid_src = am_host + \"/uuid/\" + dfp + \"?jsonp=uuidCallback\",  uuid_script = \'<scr\' + \'ipt type=\"text/javascript\" src=\"\' + uuid_src + \'\"></scr\' + \'ipt>\';  if (window.DocumentWrite) { DocumentWrite(uuid_script); } else { document.write(uuid_script);}};window.uuidCallback = function(uuid) { // parse integer for targeting purposes  var n = parseInt(uuid.slice(0, 12), 16);};if (window.DocumentWrite) { DocumentWrite(am_script);} else {  document.write(am_script);};",
 						  "\";d.src = am_src;d.type = \"text/ja" + "vascript\"; e.parentNode.insertBefore(d,e);})();</sc" + "ript>"
 ]
 
@@ -54,6 +54,7 @@ var inhalt_durchlauf =0;
 // refesh value of "inhalt" "inhalt" is value of taxarea "tagausgabe"
 
 		function akktualisieren(t) {
+			document.getElementById("param_ii").checked = true;
 			
 						
 // chooses parameters which are nedded			
@@ -121,7 +122,14 @@ var inhalt_durchlauf =0;
 							if (b[i]==param){
 								if (formelement.checked && parameterconfig[param].type != "radio" && parameterconfig[param].type != "check"){
 									if (document.getElementById(b[i]).value != null && document.getElementById(b[i]).value != b[i]+ " value" && document.getElementById(b[i]).value != "" && document.getElementById(b[i]).value != "not needed" ){
-										inhalt += "&"+ b[i] + "=" + document.getElementById(b[i]).value ;
+										if (parameterconfig[b[i]].type == "dropdown"){
+											if (document.getElementById(b[i] + "dd").value != "default") {
+												inhalt += "&"+ b[i] + "=" + document.getElementById(b[i]).value ;
+											}
+										}else if (parameterconfig[b[i]].type == "textarea"){
+											inhalt += "&"+ b[i] + "=" + document.getElementById(b[i]).value ;
+										}
+										
 									}
 								}
 
