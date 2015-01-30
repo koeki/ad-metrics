@@ -29,12 +29,12 @@ var parameterconfig = { dfp:{type: "radio",		scope: 	{ enable:"1", disable:"0" }
 						cr: {type: "textarea", },
 						tp: {type: "textarea", },
 						ts: {type: "textarea", },
-						ii: {type: "textarea", },
+						ii: {type: "textarea", startvalue : "[IMPRESSIONID]"},
 
 
 						};
 
-var output_config = [ " \<script async type=\"text/javascript\"src=\"http://metrics.nt.vc/metrics.js?\"",
+var output_config = [ " \<script async type=\"text/javascript\"src=\"http://metrics.nt.vc/metrics.js?",
 				"var am_host = (window.isSecure ? \" https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"),am_src = am_host + \"/metrics.js?ii=\" + window.rvr_id + \"&cn=foldcheck\" + window.rvr_id + \"&sz=\" + window.mpcrw + \"x\" + window.mpcrh +  \"&cl=\" + window.siteID + \"&ee=\" + window.ntee + \"&es=\" + window.ntes + \"&ed=\" + window.nted + \"&ep=\" + window.ntep + \"&est=\" + window.ntest + \"&ec=\" + window.ntec + \"&pl=\" + window.M1 + \"&cr=\" + window.M2 + \"&hu=\" + window.hu \" + \"",
 				"\<scr" + "ipt type=\"text/jav" + "ascript\">(function(){var e = document.getElementsByTagName(\"scr" + "ipt\")[0];var d = document.createElement(\"script\");var am_host = ((location.protocol === \'https:\') ? \"https://secure-metrics.nt.vc\": \"http://metrics.nt.vc\"), am_src = am_host + \"/metrics.js?ii=\" + 67 + \"\" + (+new Date()) + \"&cn=1\" + \"&sz=[%tp_AdFormat%]\" + \"&hu=\" + window.hu + \"&cl=707&pl=707186007513190&cr=15516023","\";d.src = am_src;d.type = \"text/ja" + "vascript\"; e.parentNode.insertBefore(d,e);})();</sc" + "ript>"
 					];
@@ -118,6 +118,20 @@ var inhalt_durchlauf =0;
 				for (var i = 0  ; i < b.length ; i++ ) {	
 
 					for (param in parameterconfig){
+
+						for (param_startvalue in parameterconfig){
+
+						if (parameterconfig[param_startvalue].startvalue != null) {
+							var startvalue_v = parameterconfig[param_startvalue].startvalue;
+							document.getElementById(param_startvalue).value = startvalue_v;
+						}
+
+					}
+
+
+
+
+
 						formelement = document.getElementById("param_"+b[i]);
 							if (b[i]==param){
 								if (formelement.checked && parameterconfig[param].type != "radio" && parameterconfig[param].type != "check"){
